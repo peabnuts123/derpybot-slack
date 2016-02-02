@@ -6,5 +6,6 @@ DerpyBot for Slack
 
 # Reference Materials
 [Slack bot-users](https://api.slack.com/bot-users)
+
 [howdy.ai's botkit NPM package](http://howdy.ai/botkit/)
 
