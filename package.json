@@ -15,6 +15,10 @@
   ],
   "author": "peabnuts123",
   "license": "ISC",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/peabnuts123/derpybot-slack.git"
+  },
   "dependencies": {
     "botkit": "0.0.5"
   }
