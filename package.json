@@ -15,11 +15,12 @@
   ],
   "author": "peabnuts123",
   "license": "ISC",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/peabnuts123/derpybot-slack.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peabnuts123/derpybot-slack.git"
   },
   "dependencies": {
-    "botkit": "0.0.5"
+    "botkit": "0.0.5",
+    "cleverbot-node": "^0.2.1"
   }
 }
