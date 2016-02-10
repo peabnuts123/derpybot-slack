@@ -7,6 +7,9 @@ Cleverbot.prepare(function () {
     var tokens = {
         peabnuts123test: {
             derpy: "xoxb-20084304583-G2E20Lum8zLLIuZLUmwxJoXK",
+        },
+        becadevelopers: {
+            derpy: "xoxb-20808795654-dSZSCRLuAkkhksvcACapGr1s"
         }
     };
 
@@ -15,7 +18,7 @@ Cleverbot.prepare(function () {
     });
 
     var bot = controller.spawn({
-        token: tokens.peabnuts123test.derpy
+        token: tokens.becadevelopers.derpy
     }).startRTM();
 
     controller.hears(['shutdown'], 'direct_message,direct_mention,mention', function (bot, message) {
