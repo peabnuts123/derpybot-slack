@@ -13,12 +13,15 @@ Cleverbot.prepare(function () {
         }
     };
 
+	var currentToken = tokens.becadevelopers.derpy;
+	//var currentToken = tokens.peabnuts123test.derpy;
+	
     var controller = Botkit.slackbot({
         debug: false,
     });
 
     var bot = controller.spawn({
-        token: tokens.becadevelopers.derpy
+        token: currentToken
     }).startRTM();
 
     controller.hears(['shutdown'], 'direct_message,direct_mention,mention', function (bot, message) {
@@ -29,12 +32,18 @@ Cleverbot.prepare(function () {
     });
 
     controller.hears(['.*'], 'direct_message,direct_mention,mention', function (bot, slackMessage) {
-        slackMessage.text = slackMessage.text.replace(/derpybot/ig, "CleverBot").replace(/Derpy/g, "CleverBot");
+		bot.api.users.info({token: currentToken, user: slackMessage.user}, function(error, response) {
+			if(!error) {
+				slackMessage.text = slackMessage.text.replace(/^@derpy\s*/, "").replace(/derpybot/ig, "CleverBot").replace(/(?:Derpy|@derpy)/g, "CleverBot")
 
-        cleverbotInstance.write(slackMessage.text, function (cbResponse) {
-            cbResponse.message.replace(/cleverbot/ig, "Derpy");
+				cleverbotInstance.write(slackMessage.text, function (cbResponse) {
+					cbResponse.message.replace(/cleverbot/ig, "Derpy");
 
-            bot.reply(slackMessage, cbResponse.message);
-        });
+					bot.reply(slackMessage, response.user.name + ": " + cbResponse.message);
+				});			
+			} else {
+				bot.reply("ERROR OCCURRED :(");
+			}
+		});
     });
 });
