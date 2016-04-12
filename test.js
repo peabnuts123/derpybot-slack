@@ -10,10 +10,13 @@ Cleverbot.prepare(function () {
         },
         becadevelopers: {
             derpy: "xoxb-20808795654-dSZSCRLuAkkhksvcACapGr1s"
-        }
+        },
+	electronpowered: {
+	    derpy: "xoxb-33848441922-GJPaIGKyCCeP9B5JBnH8hUQ6"
+	}
     };
 
-	var currentToken = tokens.becadevelopers.derpy;
+	var currentToken = tokens.electronpowered.derpy;
 	//var currentToken = tokens.peabnuts123test.derpy;
 	
     var controller = Botkit.slackbot({
