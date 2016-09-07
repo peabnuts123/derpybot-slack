@@ -1,26 +1,18 @@
 var Botkit = require('botkit');
 var Cleverbot = require('cleverbot-node');
+var argv = require('yargs').argv;
 
 var cleverbotInstance = new Cleverbot();
 
 Cleverbot.prepare(function () {
-    var tokens = {
-        peabnuts123test: {
-            derpy: "xoxb-20084304583-G2E20Lum8zLLIuZLUmwxJoXK",
-        },
-        becadevelopers: {
-            derpy: "xoxb-20808795654-dSZSCRLuAkkhksvcACapGr1s"
-        },
-	electronpowered: {
-	    derpy: "xoxb-33848441922-GJPaIGKyCCeP9B5JBnH8hUQ6"
-	}
-    };
+	var currentToken = argv.token;
 
-	var currentToken = tokens.electronpowered.derpy;
-	//var currentToken = tokens.peabnuts123test.derpy;
-	
+    if (toString.call(currentToken) !== '[object String]') {
+        throw new Error("No valid token presented. Please use --token to specify a token");
+    }
+
     var controller = Botkit.slackbot({
-        debug: false,
+        debug: false
     });
 
     var bot = controller.spawn({

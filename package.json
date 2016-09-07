@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "botkit": "0.0.5",
-    "cleverbot-node": "^0.2.1"
+    "cleverbot-node": "^0.2.1",
+    "yargs": "^4.8.1"
   }
 }
