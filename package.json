@@ -1,10 +1,11 @@
 {
   "name": "derpybot-slack",
   "version": "1.0.0",
+  "private": true,
   "description": "How do I Slack 6_9",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node index.ts"
   },
   "keywords": [
     "slack",
@@ -19,9 +20,15 @@
     "type": "git",
     "url": "https://github.com/peabnuts123/derpybot-slack.git"
   },
-  "dependencies": {
-    "botkit": "0.0.5",
-    "cleverbot-node": "^0.3.3",
-    "yargs": "^4.8.1"
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/lodash": "^4.14.134",
+    "botbuilder-adapter-slack": "^1.0.3",
+    "botkit": "^4.0.2",
+    "dotenv": "^8.0.0",
+    "lodash": "^4.17.11",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.5.1"
   }
 }
