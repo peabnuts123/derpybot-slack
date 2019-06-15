@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  derpy-bot:
+    expose:
+      - 3000
+    environment:
+      PORT: 3000
+    labels:
+      # Traefik config
+      traefik.enable: "true"
+      traefik.frontend.rule: "Host:derpybot.winsauce.com"
+      traefik.port: "3000"
+      traefik.frontend.redirect.entryPoint: https
+
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true

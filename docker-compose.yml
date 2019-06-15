@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  derpy-bot:
+    build: .
+    container_name: "derpy-bot"
+    restart: unless-stopped
+    environment:
+      # Secrets to be inject by build context
+      clientSigningSecret: "${clientSigningSecret}"
+      botToken: "${botToken}"
+      cleverBotApiToken: "${cleverBotApiToken}"

@@ -4,13 +4,6 @@ import _ from 'lodash';
 
 import Cleverbot from './vendor/cleverbot-ts';
 
-
-// READ .ENV
-// @TODO drop in favor of a docker-dev compose file
-import dotenv from 'dotenv';
-dotenv.config();
-
-
 // IMPORT SECRETS
 const {
   clientSigningSecret,

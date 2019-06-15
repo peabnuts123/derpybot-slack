@@ -5,6 +5,7 @@
   "description": "How do I Slack 6_9",
   "main": "index.js",
   "scripts": {
+    "debug": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
     "start": "ts-node index.ts"
   },
   "keywords": [
@@ -25,7 +26,6 @@
     "@types/lodash": "^4.14.134",
     "botbuilder-adapter-slack": "^1.0.3",
     "botkit": "^4.0.2",
-    "dotenv": "^8.0.0",
     "lodash": "^4.17.11",
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
